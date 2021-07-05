@@ -86,7 +86,7 @@
      <string/>
     </property>
     <property name="placeholderText">
-     <string>ABF file names divided by space</string>
+     <string>ABF file names separated by spaces</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -105,7 +105,7 @@
     </property>
     <property name="text">
      <string>Impact chenged at:
-(divided by space)</string>
+(separated by spaces)</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_3">
