@@ -394,9 +394,9 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "ABF Plot"))
         self.pushButton_1.setText(_translate("MainWindow", "Save"))
-        self.lineEdit_1.setPlaceholderText(_translate("MainWindow", "ABF file names divided by space"))
+        self.lineEdit_1.setPlaceholderText(_translate("MainWindow", "ABF file names separated by spaces"))
         self.label_2.setText(_translate("MainWindow", "Impact chenged at:\n"
-"(divided by space)"))
+"(separated by spaces)"))
         self.radioButton_3.setText(_translate("MainWindow", "PNG"))
         self.radioButton_4.setText(_translate("MainWindow", "SVG"))
         self.radioButton_5.setText(_translate("MainWindow", "EPS"))
