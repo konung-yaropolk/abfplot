@@ -1,2 +1,2 @@
 # abfplot
-Simple script with GUI to make you easy to plot your ABF files
+Simple script with GUI to make you easy plotting your Axon Binary files (.abf)
