@@ -6,4 +6,8 @@ You can also build an executable one-file binaries for Windows and Linux to make
 https://github.com/konung-yaropolk/abfplot
 
 
-![img](https://user-images.githubusercontent.com/43002351/124521947-12afb680-ddfa-11eb-9cf8-f2dcf7434c3e.png)
+Linux (KDE Plasma):
+![img1](https://user-images.githubusercontent.com/43002351/124636445-370aa200-de91-11eb-92a4-80b2ab99c17f.png)
+
+Windowa 10:
+![img2](https://user-images.githubusercontent.com/43002351/124521947-12afb680-ddfa-11eb-9cf8-f2dcf7434c3e.png)
