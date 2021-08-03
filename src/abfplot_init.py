@@ -1,8 +1,8 @@
  #!/usr/bin/env python3
 
+from PyQt5 import QtWidgets
 import abfplot_gui
 import abfplot_core
-from PyQt5 import QtWidgets
 
 # Ініціалізація графічного інтерфейсу
 class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
