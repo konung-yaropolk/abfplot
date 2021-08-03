@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 import sys
+from itertools import zip_longest
 import numpy as np
 import matplotlib.pyplot as plt
 import pyabf
 import pyabf.filter
 import pyabf.tools.memtest
-from itertools import zip_longest
 
 
 # Задання глобального масиву вертикальних зміщень
