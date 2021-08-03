@@ -8,11 +8,11 @@
 # pyabf
 # pyqt5
 
+import sys
+from PyQt5 import QtWidgets
 import abfplot_gui
 import abfplot_core
 import abfplot_init
-import sys
-from PyQt5 import QtWidgets
 
 
 def main():
