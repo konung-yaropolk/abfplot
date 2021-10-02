@@ -1,6 +1,6 @@
 # abfplot
-Simple script with GUI to make you easy plotting your Axon Binary files (.abf)
-Python with QT5 makes it multiplanform.
+Simple script with GUI to make you easy plotting your Axon Binary files (.abf).
+Python with Qt makes it multiplanform.
 You can also build an executable one-file binaries for Windows and Linux to make script portable.
 
 https://github.com/konung-yaropolk/abfplot
