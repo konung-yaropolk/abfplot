@@ -216,7 +216,7 @@ def plot(ABF_FILE, SINCE, STIM, EXCLUDE_SWEEPS, CHANNEL, BASELINE, SIGMA,
         # Збереження рисунку у форматі, вказаному в SAVE_FORMAT
 
         if SAVE:
-            plt.savefig(i + '_memtest.' + SAVE_FORMAT)       
+            plt.savefig(ABF_FILE[0] + '.' + SAVE_FORMAT)       
         if SHOW:
             plt.show()
         else:
