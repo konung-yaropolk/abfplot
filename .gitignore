@@ -1,2 +1,4 @@
 __pycache__/
+src/dist/
+src/build/
 #bin/
