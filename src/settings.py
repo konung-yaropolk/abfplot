@@ -2,10 +2,12 @@
 # Now works only for ABF_FILE parameter
 
 ABF_FILE = [
+# Список імен abf файлів без росширення, в лапках, розділені комами
+
 #'2012_12_21_0000',
 #'2012_12_21_0001',
 #'2012_12_21_0002',
-  
+ 
 
 #2M Ca:
 
@@ -277,5 +279,6 @@ ABF_FILE = [
 #'/run/media/yaroslav/Data_Window/Yarik_Iowa_data/MCU_Project_Yariks_data/2021_06_07/2021_06_08_0046',
 #'/run/media/yaroslav/Data_Window/Yarik_Iowa_data/MCU_Project_Yariks_data/2021_06_07/2021_06_08_0047',
 #'/run/media/yaroslav/Data_Window/Yarik_Iowa_data/MCU_Project_Yariks_data/2021_06_08/2021_06_08_0077'
+
 
 ]
