@@ -50,10 +50,11 @@ class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
 
     def initParam(self):
 
-        global ABF_FILE, SINCE, STIM, EXCLUDE_SWEEPS, CHANNEL, BASELINE, SIGMA, DESCR, OFFSET_Y, TWO_WIN, LINE_WIDTH, ALPHA, FIGURE_W, FIGURE_H, DPI, FREQ, SHOW, SAVE, SAVE_FORMAT, MIN_X, MAX_X, MIN_Y, MAX_Y
+        global ABF_FILE, DIR, SINCE, STIM, EXCLUDE_SWEEPS, CHANNEL, BASELINE, SIGMA, DESCR, OFFSET_Y, TWO_WIN, LINE_WIDTH, ALPHA, FIGURE_W, FIGURE_H, DPI, FREQ, SHOW, SAVE, SAVE_FORMAT, MIN_X, MAX_X, MIN_Y, MAX_Y
 
         # [self.lineEdit_1.text()]
         ABF_FILE = list(map(str, self.lineEdit_1.text().split(' ')))
+        DIR = ''
         SINCE = list(map(int, self.lineEdit_2.text().split(' ')))
         # if self.radioButton_1.isChecked():
         #    STIM = ['+']
@@ -63,8 +64,7 @@ class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
         EXCLUDE_SWEEPS = [
             list(map(int, self.lineEdit_9.text().split(',')))]
         CHANNEL = self.comboBox_1.currentIndex()
-        BASELINE = [self.doubleSpinBox_4.value(), self.doubleSpinBox_5.value(
-        )] if self.checkBox_2.isChecked() else [None, None]
+        BASELINE = [self.doubleSpinBox_4.value(), self.doubleSpinBox_5.value()] if self.checkBox_2.isChecked() else [None, None]
         SIGMA = self.doubleSpinBox_3.value()
         DESCR = self.lineEdit_3.text()
         OFFSET_Y = self.lineEdit_4.value()
@@ -97,6 +97,7 @@ class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
         # load params from settings.py if input is empty
         if ABF_FILE[0] == '' and len(ABF_FILE) == 1:
             ABF_FILE = settings.ABF_FILE
+            DIR = settings.DIR
 
     def plot(self):
              
@@ -107,13 +108,17 @@ class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
                               DPI, FREQ, SHOW, SAVE, SAVE_FORMAT, MIN_X, MAX_X, MIN_Y, MAX_Y)
 
         # Перехоплення можливих помилок та виведення повідомлення про помилку
-        except ValueError:
+        except ValueError as e:
+            print(e)
             self.label_8.setText('Invalid input. Please, retry.')
-        except ZeroDivisionError:
+        except ZeroDivisionError as e:
+            print(e)
             self.label_8.setText('Invalid input. Please, retry.')
-        except FileNotFoundError:
+        except FileNotFoundError as e:
+            print(e)
             self.label_8.setText('File not found')
-        except:
+        except Exception as e:
+            print(e)
             self.label_8.setText('Unknown error. Check input.')
         else:
             self.label_8.setText('')
@@ -122,14 +127,16 @@ class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
         
         try:
             self.initParam()
-            abfplot_core.membrane_test(ABF_FILE, FIGURE_W, FIGURE_H, SAVE, SHOW, SAVE_FORMAT)
+            abfplot_core.membrane_test(ABF_FILE, DIR, FIGURE_W, FIGURE_H, SAVE, SHOW, SAVE_FORMAT)
 
         # Перехоплення можливих помилок та виведення повідомлення про помилку
-        except FileNotFoundError:
+        except FileNotFoundError as e:
+            print(e)
             self.label_8.setText('File not found')
-        except Exception:
-            self.label_8.setText('Must be in VC configuration')
-        except:
-            self.label_8.setText('Unknown error. Check input.')
+        # except Exception as e:
+        #     print(e)
+        #     self.label_8.setText('Must be in VC configuration')
+        # except:
+        #     self.label_8.setText('Unknown error. Check input.')
         else:
             self.label_8.setText('')
