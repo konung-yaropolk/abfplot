@@ -21,7 +21,7 @@ def makeline(ABF_FILE, SINCE, STIM, EXCLUDE_SWEEPS, BASELINE, SIGMA,
     # Перехоплення помилки відсутнього файлу
     try:
         # Відкривання abf файлу
-        abf = pyabf.ABF(ABF_FILE + '.abf')
+        abf = pyabf.ABF(ABF_FILE)
     except ValueError:
         print(ABF_FILE + '.abf not found!')
         raise FileNotFoundError
@@ -224,17 +224,17 @@ def plot(ABF_FILE, SINCE, STIM, EXCLUDE_SWEEPS, CHANNEL, BASELINE, SIGMA,
             
         print('Script finished.')
 
-def membrane_test(ABF_FILE, FIGURE_W, FIGURE_H, SAVE, SHOW, SAVE_FORMAT):
+def membrane_test(ABF_FILE, DIR, FIGURE_W, FIGURE_H, SAVE, SHOW, SAVE_FORMAT):
     
     for i in ABF_FILE:
     
         try:
-            abf = pyabf.ABF(i + '.abf')
+            abf = pyabf.ABF(DIR+i)
         except ValueError:
-            print(i + '.abf not found!')
+            print(DIR+i + ' not found!')
             raise FileNotFoundError
         else:            
-            print(i + '.abf processing...')
+            print(DIR+i + ' processing...')
             
             memtest = pyabf.tools.memtest.Memtest(abf)
 
@@ -278,7 +278,7 @@ def membrane_test(ABF_FILE, FIGURE_W, FIGURE_H, SAVE, SHOW, SAVE_FORMAT):
             plt.tight_layout()
             
             if SAVE:
-                plt.savefig(i + '_memtest.' + SAVE_FORMAT)       
+                plt.savefig(DIR+i + '_memtest.' + SAVE_FORMAT)       
             if SHOW:
                 plt.show()
             else:
