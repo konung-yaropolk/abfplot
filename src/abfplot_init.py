@@ -133,10 +133,11 @@ class AbfPlot_GUI(QtWidgets.QMainWindow, abfplot_gui.Ui_MainWindow):
         except FileNotFoundError as e:
             print(e)
             self.label_8.setText('File not found')
-        # except Exception as e:
-        #     print(e)
-        #     self.label_8.setText('Must be in VC configuration')
-        # except:
-        #     self.label_8.setText('Unknown error. Check input.')
+        except Exception as e:
+            print(e)
+            self.label_8.setText('Must be in VC configuration')
+        except:
+            print('Unknown error. Check input.')
+            self.label_8.setText('Unknown error. Check input.')
         else:
             self.label_8.setText('')
