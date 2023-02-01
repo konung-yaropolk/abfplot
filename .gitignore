@@ -1,6 +1,14 @@
 __pycache__/
+*.py[cod]
+
+dist/
+build/
+venv/
+.idea/
+
 src/dist/
 src/build/
-.idea/
-venv/
+src/venv/
+src/.idea/
+
 #bin/
