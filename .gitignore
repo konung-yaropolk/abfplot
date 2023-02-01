@@ -1,4 +1,6 @@
 __pycache__/
 src/dist/
 src/build/
+.idea/
+venv/
 #bin/
